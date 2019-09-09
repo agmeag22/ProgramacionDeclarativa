@@ -1,0 +1,44 @@
+conteo(A,B):- 
+    contar(A,B,0).
+
+contar(A,B,K):-
+    =<(A,B),
+    is(K1,+(K,A)),
+    is(A1,+(A,1)),
+    writeln(K1),
+    contar(A1,B,K1).
+
+factorial(0,1).
+factorial(1,1).
+
+factorial(N,FN):-
+	>=(N,2),
+	is(Nant,-(N,4)),
+	factorial(Nant,FNant),
+	is(FN,*(N,FNant)).
+	
+	conteo(A,B):- 
+    contar(A,B,0).
+
+contar(A,B,K):-
+    =<(A,B),
+    is(K1,+(K,A)),
+    is(A1,+(A,1)),
+    writeln(K1),
+    contar(A1,B,K1).
+
+
+%con un termino imprimir todas serie de fibonacci
+
+fibonacci(N):-
+    writeln(0),
+    is(N2,-(N,2)),
+    fibbo(1,0,N2).
+
+fibbo(A,B,C):-
+   	>=(C,0),
+    is(R,+(A,B)),
+    is(B2,A),
+    writeln(R),
+    is(C2,-(C,1)),
+    fibbo(R,B2,C2).
